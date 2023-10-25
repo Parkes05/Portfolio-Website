@@ -1,0 +1,70 @@
+{% extends 'base.html' %}
+{% block content %}
+<div class="body">
+    <br>
+    <h1 class="heading">Develop and achieve your requirements with Python PL</h1>
+
+    <div class="container text-center">
+        <hr>
+        <div class="row">
+            <div class="col">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="card-img-top" alt="benjamin's profile pic">
+            </div>
+
+            <div class="col">
+                <div class="card-body">
+                    <h2 class="card-title">Benjamin Muoka</h2>
+                    <p class="card-subtitle">Renewable Energy Engineer | ML Engineer | Python Developer</p>
+                    <p class="card-text">
+                        <ul>
+                            <li>Data Analysis</li>
+                            <li>Full Stack Development</li>
+                            <li>Database Management</li>
+                            <li>Bot Creation</li>
+                            <li>Git and Version Control</li>
+                        </ul>
+                    </p>
+                    <a href="#" class="txt">Python Projects</a>
+                    <br>
+                    <a href="#" class="txt">ML Projects</a>
+                </div>
+            </div>
+
+            <div class="col">
+                <div id="carouselExample" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        {% for i in py: %}
+                        {% if i.id == 0: %}
+                        <div class="carousel-item active" data-bs-interval="3000">
+                            <img src="{{ i.img_url }}" class="d-block w-100" alt="code-img">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="car-txt">{{ i.title }}</h5>
+                                <p class="car-txt">{{ i.description }}</p>
+                            </div>
+                        </div>
+                        
+                        {% elif i.id != 1 and i.id < 6: %}
+                        <div class="carousel-item" data-bs-interval="3000">
+                            <img src="{{ url_for('static', filename='images/c2.jpg') }}" class="d-block w-100" alt="code-img">
+                            <div class="carousel-caption d-none d-md-block">
+                                <h5 class="car-txt">{{ i.title }}</h5>
+                                <p class="car-txt">{{ i.description }}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Previous</span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#carouselExample" data-bs-slide="next">
+                        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+                        <span class="visually-hidden">Next</span>
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock %}

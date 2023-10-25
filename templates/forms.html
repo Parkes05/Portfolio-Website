@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+{% from 'bootstrap5/form.html' import render_form %}
+{% block content %}
+{% if status: %}
+<br>
+<div class="container">
+    {{ render_form(login, novalidate=True) }}
+</div>
+{% else: %}
+<br>
+<div class="container">
+    {{ render_form(input, novalidate=True) }}
+</div>
+{% endif %}
+{% endblock %}

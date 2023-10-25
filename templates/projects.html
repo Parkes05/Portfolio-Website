@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% block content %}
+{% if page == 'python' %}
+<br>
+<div class="container text-center">
+    <h1 class="heading" style="color: #E1AA74;">Completed Python Projects</h1>
+</div>
+{% elif page == 'ml' %}
+<br>
+<div class="container text-center">
+    <h1 class="heading" style="color: #E1AA74;">Developed ML Models</h1>
+</div>
+{% endif %}
+
+<div class="container text-center">
+    <hr>
+    <div class="row">
+        <div class="col">
+            <img src="{{ url_for('static', filename='images/projects.jpg') }}" alt="benjamin's profile pic">
+        </div>
+
+        <div class="col">
+            {% for i in projects: %}
+            <div>
+                <h2 class="project-title">{{ i.title }}</h2>
+                <p class="project-pg">{{ i.description }}</p>
+                <button class="btn btn-primary project-btn" type="submit">
+                    <img src="{{ url_for('static', filename='svg/github.svg') }}">
+                </button>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

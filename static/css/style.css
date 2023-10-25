@@ -1,0 +1,71 @@
+.navbar {
+    background-color: #192655;
+}
+
+.brand {
+    border-radius: 50%;
+    width: 45px;
+    height: 35px;
+}
+
+.btn {
+    background-color: #3876BF;
+    border-color: #3876BF;
+}
+
+.foot {
+    background-color: #3876BF;
+}
+
+.svg {
+    background-color: white;
+    width: 30p; 
+    height: 30px;
+}
+
+.heading {
+    color: #E1AA74;
+    font-size: 18px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-weight: lighter;
+    font-style: italic;
+    text-align: center;
+}
+
+.card-body {
+    text-align: left;
+}
+
+.card-title {
+    color: #E1AA74;
+    font-size: 38px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.card-subtitle {
+    font-size: 15px;
+    font-family: Arial, Helvetica, sans-serif;
+    font-style: italic;
+    color: whitesmoke;
+}
+
+ul {
+    font-size: 16px;
+    font-family: Georgia, 'Times New Roman', Times, serif;
+}
+
+.txt {
+    color: #F3F0CA;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+.car-txt {
+    color: whitesmoke;
+    font-family: Arial, Helvetica, sans-serif;
+}
+
+
+.project-btn {
+    background-color: #F3F0CA;
+    border-color: #F3F0CA;
+}
