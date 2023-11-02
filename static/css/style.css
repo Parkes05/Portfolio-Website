@@ -72,7 +72,6 @@ ul {
 
 .uploaded-img {
     height: 295px;
-    width: 100%;
 }
 
 .carousel-control-next-icon {
@@ -85,7 +84,6 @@ ul {
 
 .more-img {
     height: 300px;
-    width: 100%;
 }
 
 .all-sent-projects {
@@ -103,4 +101,12 @@ ul {
     font-family: sans-serif;
     margin-top: 3px;
     margin-bottom: 3px;
+}
+
+.hide {
+    display: none;
+}
+
+.toggler:hover {
+    cursor: pointer;
 }

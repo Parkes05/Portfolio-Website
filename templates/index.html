@@ -7,11 +7,11 @@
     <div class="container text-center">
         <hr>
         <div class="row">
-            <div class="col">
-                <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="card-img-top" alt="benjamin's profile pic">
+            <div class="col-sm-4">
+                <img src="{{ url_for('static', filename='images/profile.jpg') }}" class="uploaded-img" alt="benjamin's profile pic">
             </div>
 
-            <div class="col">
+            <div class="col-sm-4">
                 <div class="card-body">
                     <h2 class="card-title">Benjamin Muoka</h2>
                     <p class="card-subtitle">Renewable Energy Engineer | ML Engineer | Python Developer</p>
@@ -24,23 +24,23 @@
                             <li>Git and Version Control</li>
                         </ul>
                     </p>
-                    <a href="#" class="txt">Python Projects</a>
-                    <br>
-                    <a href="#" class="txt">ML Projects</a>
+                    <a class='txt toggler' data-ref='py'>Python Projects</a><br>
+                    <a class='txt toggler' data-ref='ml'>ML Models</a>
                 </div>
             </div>
 
-            <div class="col">
+            <div id="py" class="col-sm-4 toggles">
                 <div id="demo" class="carousel slide" data-bs-ride="carousel">
                     <div class="carousel-inner">
+                        {% for i in py: %}
+                        {% if i.id == 1: %}
                         <div class="carousel-item active">
-                            <img src="{{ py[0].img_url }}" alt="code-img" class="d-block uploaded-img">
+                            <img src="{{ i.img_url }}" alt="code-img" class="d-block uploaded-img">
                             <div class="carousel-caption">
-                            <p class="car-txt">{{ py[0].title}}</p>
+                            <p class="car-txt">{{ i.title}}</p>
                             </div>
                         </div>
-                        {% for i in py: %}
-                        {% if i.id > 1 and i.id < 6: %}
+                        {% elif i.id > 1 and i.id < 6: %}
                         <div class="carousel-item">
                             <img src="{{i.img_url}}" alt="code-img" class="d-block uploaded-img">
                             <div class="carousel-caption">
@@ -50,10 +50,40 @@
                         {% endif %}
                         {% endfor %}
                     </div>
-                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev" style="fill: white;">
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo" data-bs-slide="prev">
                         <span class="carousel-control-prev-icon"></span>
                     </button>
                     <button class="carousel-control-next" type="button" data-bs-target="#demo" data-bs-slide="next">
+                        <span class="carousel-control-next-icon"></span>
+                    </button>
+                </div>
+            </div>
+
+            <div id="ml" class="col-sm-4 toggles hide">
+                <div id="demo1" class="carousel slide" data-bs-ride="carousel">
+                    <div class="carousel-inner">
+                        <div class="carousel-item active">
+                            {% for i in ml: %}
+                            {% if i.id == 1: %}
+                            <img src="{{ i.img_url }}" alt="code-img" class="d-block uploaded-img">
+                            <div class="carousel-caption">
+                            <p class="car-txt">{{ i.title}}</p>
+                            </div>
+                        </div>
+                        {% elif i.id > 1 and i.id < 6: %}
+                        <div class="carousel-item">
+                            <img src="{{i.img_url}}" alt="code-img" class="d-block uploaded-img">
+                            <div class="carousel-caption">
+                            <p class="car-txt">{{i.title}}</p>
+                            </div>
+                        </div>
+                        {% endif %}
+                        {% endfor %}
+                    </div>
+                    <button class="carousel-control-prev" type="button" data-bs-target="#demo1" data-bs-slide="prev">
+                        <span class="carousel-control-prev-icon"></span>
+                    </button>
+                    <button class="carousel-control-next" type="button" data-bs-target="#demo1" data-bs-slide="next">
                         <span class="carousel-control-next-icon"></span>
                     </button>
                 </div>
