@@ -17,7 +17,7 @@ date = current_date()
 
 
 app = Flask(__name__)
-app.config['SECRET_KEY'] = 'testing' #remember to change
+app.config['SECRET_KEY'] = os.environ.get('FLASK_KEY')
 
 app.config['SQLALCHEMY_DATABASE_URI'] = os.environ.get('DB_URI', 'sqlite:///projects.db')
 db = SQLAlchemy(app)
