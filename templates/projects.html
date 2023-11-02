@@ -15,18 +15,18 @@
 <div class="container text-center">
     <hr>
     <div class="row">
-        <div class="col">
-            <img src="{{ url_for('static', filename='images/projects.jpg') }}" alt="benjamin's profile pic">
+        <div class="col-sm-5">
+            <img src="{{ url_for('static', filename='images/projects.jpg') }}" alt="benjamin's-pic" class="more-img">
         </div>
 
-        <div class="col">
+        <div class="col-sm-7">
             {% for i in projects: %}
-            <div>
+            <div class="all-sent-projects">
                 <h2 class="project-title">{{ i.title }}</h2>
                 <p class="project-pg">{{ i.description }}</p>
-                <button class="btn btn-primary project-btn" type="submit">
+                <a href="{{ i.github_url }}"  class="btn btn-primary project-btn" type="submit" target="_blank">
                     <img src="{{ url_for('static', filename='svg/github.svg') }}">
-                </button>
+                </a>
             </div>
             {% endfor %}
         </div>

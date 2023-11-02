@@ -69,3 +69,38 @@ ul {
     background-color: #F3F0CA;
     border-color: #F3F0CA;
 }
+
+.uploaded-img {
+    height: 295px;
+    width: 100%;
+}
+
+.carousel-control-next-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M2.75 0l-1.5 1.5 2.5 2.5-2.5 2.5 1.5 1.5 4-4-4-4z'/%3E%3C/svg%3E");
+}
+
+.carousel-control-prev-icon {
+    background-image: url("data:image/svg+xml;charset=utf8,%3Csvg xmlns='http://www.w3.org/2000/svg' fill='red' viewBox='0 0 8 8'%3E%3Cpath d='M5.25 0l-4 4 4 4 1.5-1.5-2.5-2.5 2.5-2.5-1.5-1.5z'/%3E%3C/svg%3E");
+}
+
+.more-img {
+    height: 300px;
+    width: 100%;
+}
+
+.all-sent-projects {
+    text-align: left;
+    font-family: 'Times New Roman', Times, serif;
+    margin-bottom: 15px;
+    border: 1px solid #F3F0CA;
+    padding-left: 15px;
+    padding-right: 15px;
+    padding-bottom: 10px;
+    border-radius: 25px;
+}
+
+.project-pg {
+    font-family: sans-serif;
+    margin-top: 3px;
+    margin-bottom: 3px;
+}

@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>{% block title %}Benjamin Portfolio{% endblock %}</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
     <link rel="stylesheet" href="{{ url_for('static', filename='css/style.css') }}">
 {% endblock %}
 </head>
@@ -38,7 +38,7 @@
                         <li class="nav-item"><a class="nav-link" href="{{url_for('python')}}">Python Projects</a></li>
                         {% endif %}
                         <li class="nav-item"><a class="nav-link" href="{{url_for('download')}}">Download CV</a></li>
-                        <li class="nav-item"><a class="nav-link" href="{{url_for('download')}}">API Documentation</a></li>
+                        <li class="nav-item"><a class="nav-link" href="https://documenter.getpostman.com/view/30513205/2s9YXe63wV" target="_blank">API Documentation</a></li>
                     </ul>
                     <form class="d-flex" role="search" method="post" action="{{ url_for('search_project', num=1) }}">
                         <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
@@ -62,25 +62,13 @@
                 <div class="col-md-4 d-flex align-items-center justify-content-center mb-3 mb-md-0 me-md-auto link-body-emphasis text-decoration-none">
                     <img class="brand" src="{{ url_for('static', filename='images/bm-img.jpg') }}" alt="bm-img">
                 </div>
-                <ul class="nav col-md-4 justify-content-end list-unstyled d-flex">
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="www.linkedin.com/in/benjamin-muoka">
-                            <img class="svg" src="{{ url_for('static', filename='svg/linkedin.svg') }}" alt="linkedin-svg">
-                        </a>
-                    </li>
-                    <li class="ms-3">
-                        <a class="text-body-secondary" href="#">
-                            <img class="svg" src="{{ url_for('static', filename='svg/twitter-x.svg') }}" alt="twitter-svg">
-                        </a>
-                    </li>
-                </ul>
             </footer>
         </div>
         {% endblock %}
     </section>
 
 {% block script %}
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
 {% endblock %}
 </body>
 

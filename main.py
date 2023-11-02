@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, redirect, abort, jsonify
+from flask import Flask, render_template, url_for, redirect, abort, jsonify, send_from_directory
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap5
@@ -142,7 +142,27 @@ def register():
 
 @app.route('/download')
 def download():
-    pass
+    return send_from_directory('static', path='file/Benjamin_Muoka_Resume.pdf', as_attachment=True)
+
+
+@app.route('/update')
+def update():
+    input = InputForm()
+    if input.validate_on_submit():
+        if input.table.data.lower() == 'python' or input.table.data.lower() == 'py':
+            data = db.session.execute(db.select(Python).where(Python.title == input.title.data)).scalar()
+            data.description = input.description.data
+            data.img_url = input.img_url.data
+            data.github_url = input.github_url.data
+            db.session.commit()
+        elif input.table.data.lower() == 'ml':
+            data = db.session.execute(db.select(Python).where(Python.title == input.title.data)).scalar()
+            data.description = input.description.data
+            data.img_url = input.img_url.data
+            data.github_url = input.github_url.data
+            db.session.commit()
+        return redirect(url_for('home'))
+    return render_template('forms.html', input=input, date=date, status=False)    
 
 
 #API Calls
