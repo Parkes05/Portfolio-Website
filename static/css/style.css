@@ -110,3 +110,7 @@ ul {
 .toggler:hover {
     cursor: pointer;
 }
+
+.move-to {
+    margin-left: 10px;
+}

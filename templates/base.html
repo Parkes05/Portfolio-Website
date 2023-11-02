@@ -37,13 +37,9 @@
                         {% else: %}
                         <li class="nav-item"><a class="nav-link" href="{{url_for('python')}}">Python Projects</a></li>
                         {% endif %}
-                        <li class="nav-item"><a class="nav-link" href="{{url_for('download')}}">Download CV</a></li>
-                        <li class="nav-item"><a class="nav-link" href="https://documenter.getpostman.com/view/30513205/2s9YXe63wV" target="_blank">API Documentation</a></li>
+                        <li class="nav-item"><a class="nav-link move-to" href="{{url_for('download')}}">Download CV</a></li>
+                        <li class="nav-item"><a class="nav-link move-to" href="https://documenter.getpostman.com/view/30513205/2s9YXe63wV" target="_blank">API Documentation</a></li>
                     </ul>
-                    <form class="d-flex" role="search" method="post" action="{{ url_for('search_project', num=1) }}">
-                        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
-                        <button class="btn btn-primary" type="submit">Search</button>
-                    </form>
                 </div>
             </div>
         </nav>

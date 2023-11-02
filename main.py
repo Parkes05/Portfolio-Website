@@ -63,11 +63,6 @@ def home():
     return render_template('index.html', date=date, page='home', py=data_python, ml=data_ml)
 
 
-@app.route('/search-project/<num>', methods=['GET', 'POST'])
-def search_project(num):
-    return render_template('projects.html', date=date, num=num)
-
-
 @app.route('/python')
 def python():
     data_python = db.session.execute(db.select(Python)).scalars().all()
