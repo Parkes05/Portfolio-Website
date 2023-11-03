@@ -38,6 +38,9 @@
                             <img src="{{ i.img_url }}" alt="code-img" class="d-block uploaded-img">
                             <div class="carousel-caption">
                             <p class="car-txt">{{ i.title}}</p>
+                            <a href="{{ i.github_url }}"  class="btn btn-primary project-btn" type="submit" target="_blank">
+                                <img src="{{ url_for('static', filename='svg/github.svg') }}">
+                            </a>
                             </div>
                         </div>
                         {% elif i.id > 1 and i.id < 6: %}
@@ -45,6 +48,9 @@
                             <img src="{{i.img_url}}" alt="code-img" class="d-block uploaded-img">
                             <div class="carousel-caption">
                             <p class="car-txt">{{i.title}}</p>
+                            <a href="{{ i.github_url }}"  class="btn btn-primary project-btn" type="submit" target="_blank">
+                                <img src="{{ url_for('static', filename='svg/github.svg') }}">
+                            </a>
                             </div>
                         </div>
                         {% endif %}
@@ -68,6 +74,9 @@
                             <img src="{{ i.img_url }}" alt="code-img" class="d-block uploaded-img">
                             <div class="carousel-caption">
                             <p class="car-txt">{{ i.title}}</p>
+                            <a href="{{ i.github_url }}"  class="btn btn-primary project-btn" type="submit" target="_blank">
+                                <img src="{{ url_for('static', filename='svg/github.svg') }}">
+                            </a>
                             </div>
                         </div>
                         {% elif i.id > 1 and i.id < 6: %}
@@ -75,6 +84,9 @@
                             <img src="{{i.img_url}}" alt="code-img" class="d-block uploaded-img">
                             <div class="carousel-caption">
                             <p class="car-txt">{{i.title}}</p>
+                            <a href="{{ i.github_url }}"  class="btn btn-primary project-btn" type="submit" target="_blank">
+                                <img src="{{ url_for('static', filename='svg/github.svg') }}">
+                            </a>
                             </div>
                         </div>
                         {% endif %}

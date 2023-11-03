@@ -58,8 +58,6 @@ with app.app_context():
 def home():
     data_python = db.session.execute(db.select(Python)).scalars().all()
     data_ml = db.session.execute(db.select(ML)).scalars().all()
-    print(data_python)
-    print(data_ml)
     return render_template('index.html', date=date, page='home', py=data_python, ml=data_ml)
 
 
