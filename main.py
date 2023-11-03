@@ -1,5 +1,5 @@
 import os
-from flask import Flask, render_template, url_for, redirect, abort, jsonify, send_from_directory
+from flask import Flask, render_template, url_for, redirect, abort, jsonify, send_from_directory, request
 from datetime import datetime
 from flask_sqlalchemy import SQLAlchemy
 from flask_bootstrap import Bootstrap5
@@ -163,11 +163,12 @@ def update():
 
 
 #API Calls
-@app.route('/all/<table>', methods=['GET'])
-def all(table):
+@app.route('/all')
+def all():
+    table = request.args.get('table', type=str)
     if table == 'py':
         data =  db.session.execute(db.select(Python)).scalars().all()
-    if table == 'ml':
+    elif table == 'ml':
         data =  db.session.execute(db.select(ML)).scalars().all()
 
     data_list = []
